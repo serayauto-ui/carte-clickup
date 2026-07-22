@@ -1,0 +1,9 @@
+[
+  {
+    "nom": "Client test",
+    "adresse": "2500 Boulevard Laurier, Québec, QC",
+    "lat": 46.770,
+    "lng": -71.282,
+    "stock": "E1568"
+  }
+]
