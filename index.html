@@ -42,3 +42,23 @@ L.marker([45.45703286550764, -73.30365806078582])
 
 </body>
 </html>
+fetch("clients.json")
+.then(response => response.json())
+.then(clients => {
+
+    clients.forEach(client => {
+
+        L.marker([
+            client.lat,
+            client.lng
+        ])
+        .addTo(map)
+        .bindPopup(
+            "<b>" + client.nom + "</b><br>" +
+            client.adresse + "<br>" +
+            "Stock : " + client.stock
+        );
+
+    });
+
+});
