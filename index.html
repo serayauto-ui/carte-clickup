@@ -9,8 +9,8 @@
 
 <style>
 #map {
-height: 600px;
-width: 100%;
+    height: 600px;
+    width: 100%;
 }
 </style>
 
@@ -24,24 +24,23 @@ width: 100%;
 
 <script>
 
-var map = L.map('map').setView([45.45703286550764, -73.30365806078582],6);
+var map = L.map('map').setView([45.45703286550764, -73.30365806078582], 6);
 
 L.tileLayer(
 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
 {
-attribution:'© OpenStreetMap'
+    attribution:'© OpenStreetMap'
 }
 ).addTo(map);
 
 
+// Point central Seray Auto
 L.marker([45.45703286550764, -73.30365806078582])
 .addTo(map)
-.bindPopup("Chambly");
+.bindPopup("Seray Auto - Chambly");
 
-</script>
 
-</body>
-</html>
+// Chargement automatique des clients
 fetch("clients.json")
 .then(response => response.json())
 .then(clients => {
@@ -61,4 +60,13 @@ fetch("clients.json")
 
     });
 
+})
+.catch(error => {
+    console.log("Erreur de chargement clients.json :", error);
 });
+
+
+</script>
+
+</body>
+</html>
